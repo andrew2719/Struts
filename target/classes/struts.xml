@@ -24,6 +24,24 @@
 		<action name="SearchBookAction" class="com.example.SearchBookAction">
 			<result name="success">/displayBooks.jsp</result>
 		</action>
+		<action name="RegisterAction" class="com.example.RegisterAction" method="post">
+			<result name="success">/login.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
 
+		<action name="LoginAction" class="com.example.LoginAction" method="post">
+			<result name="success">/index.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<action name="CreatePostAction" class="com.example.CreatePostAction" method="post">
+   <result name="success">/displayPosts.jsp</result>
+   <result name="error">/error.jsp</result>
+
+</action>
+		<action name="displayposts" class="com.example.DisplayPostsAction">
+   <result name="success">/displayPosts.jsp</result>
+   <result name="error">/error.jsp</result>
+</action>
 	</package>
 </struts>
