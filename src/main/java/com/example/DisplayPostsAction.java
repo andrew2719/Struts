@@ -27,6 +27,7 @@ public class DisplayPostsAction extends ActionSupport implements ServletRequestA
             Query query = session.createQuery("FROM Posts WHERE userId = :userId");
             query.setParameter("userId", userId);
             posts = query.list();
+//            System.out.println(posts);
 
             tx.commit();
             return SUCCESS;

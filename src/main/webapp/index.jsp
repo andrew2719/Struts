@@ -41,13 +41,13 @@
     </style>
 </head>
 <body>
-    <h1>Library Management</h1>
+    <h1>CMS</h1>
     
-    <div class="operation-links">
-        <s:a href="addBook.jsp">Add Book</s:a>
-        <s:a href="displayBooks.jsp">Display Books</s:a>
-        <s:a href="updateBook.jsp">Update Book</s:a>
-        <s:a href="deleteBook.jsp">Delete Book</s:a>
-    </div>
+<%--    <div class="operation-links">--%>
+<%--        <s:a href="addBook.jsp">Add Book</s:a>--%>
+<%--        <s:a href="displayBooks.jsp">Display Books</s:a>--%>
+<%--        <s:a href="updateBook.jsp">Update Book</s:a>--%>
+<%--        <s:a href="deleteBook.jsp">Delete Book</s:a>--%>
+<%--    </div>--%>
 </body>
 </html>

@@ -21,6 +21,8 @@ public class Posts {
     @Column(name = "user_id")
     private int userId;
 
+    @Column(name = "title")
+    private String title;
     @Column(name = "hash")
     private String hash;
 
@@ -41,10 +43,11 @@ public class Posts {
         }
     }
 
-    public Posts(int userId, String hash, String post) {
+    public Posts(int userId, String hash, String post,String title) {
         this.userId = userId;
         this.hash = calculateHash_(post);
         this.post = post;
+        this.title = title;
     }
 
     public int getPostId() {

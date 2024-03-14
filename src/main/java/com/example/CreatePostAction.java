@@ -31,7 +31,7 @@ public class CreatePostAction extends ActionSupport implements ServletRequestAwa
             String hash = String.format("%064x", new BigInteger(1, hashBytes));
 
             // Create a new Posts object and save it to the database
-            Posts post = new Posts(userId, hash, content);
+            Posts post = new Posts(userId, hash, content,title);
             session.save(post);
 
             tx.commit();
