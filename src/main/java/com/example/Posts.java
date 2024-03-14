@@ -2,6 +2,14 @@ package com.example;
 
 import jakarta.persistence.*;
 
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.nio.charset.StandardCharsets;
+import java.math.BigInteger;
+
+
 @Entity
 @Table(name = "posts")
 public class Posts {
@@ -22,9 +30,20 @@ public class Posts {
     public Posts() {
     }
 
+    String calculateHash_(String content) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byte[] hashBytes = md.digest(content.getBytes(StandardCharsets.UTF_8));
+            String hash = String.format("%064x", new BigInteger(1, hashBytes));
+            return hash;
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException("Error calculating hash", e);
+        }
+    }
+
     public Posts(int userId, String hash, String post) {
         this.userId = userId;
-        this.hash = hash;
+        this.hash = calculateHash_(post);
         this.post = post;
     }
 
@@ -58,5 +77,6 @@ public class Posts {
 
     public void setPost(String post) {
         this.post = post;
+        this.hash = calculateHash_(post);
     }
 }
